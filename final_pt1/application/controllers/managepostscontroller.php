@@ -45,7 +45,11 @@ class ManagePostsController extends Controller{
 	public function delete($pID) {
 		$this->postObject = new Post();
 		$post = $this->postObject->getPost($pID);
-		$this->postObject->deletePost($pID);
+		$result = $this->postObject->deletePost($pID);
+		header("Location: " . BASE_URL . "manageposts/");
+		$this->set('message', $result);
+
+
 	}
 
 	public function getCategories(){

@@ -1,7 +1,7 @@
 <?php
 class Post extends Model{
 
-    function getPost($pID){
+    public function getPost($pID){
         $sql = 'SELECT p.pID, p.title, p.content, p.uid, p.categoryid, p.date, c.name as name, u.first_name, u.last_name FROM posts p
 		INNER JOIN categories c on c.categoryid = p.categoryid
 		INNER JOIN users u on u.uid = p.uid
@@ -14,6 +14,7 @@ class Post extends Model{
         return $post;
 
     }
+
 
     public function getUserPosts($uID){
 
@@ -84,5 +85,7 @@ class Post extends Model{
       $sql = 'DELETE FROM posts WHERE pID = ?';
       $this->db->execute($sql, $pID);
       $message = "Post Deleted";
+
+      return $message;
     }
 }

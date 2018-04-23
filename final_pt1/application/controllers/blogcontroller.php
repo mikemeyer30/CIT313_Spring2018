@@ -13,9 +13,10 @@ class BlogController extends Controller{
 	  	$this->set('post',$post);
 
 			$this->commentsObject = new Comments();
-			$result = $this->commentsObject->getComments($pID);
+			$result = $this->commentsObject->getPostComments($pID);
 			$this->set('comments', $result);
 			$this->set('task', 'save');
+			echo $result;
 
 
    	}
@@ -29,7 +30,7 @@ class BlogController extends Controller{
 
 	public function save() {
 		$this->commentsObject = new Comments();
-		$data = array('uID'=>$_POST['uID'], 'commentText'=>$_POST['commentText'], 'date'=>$_POST['date'],'postID'=>$_POST['postID']);
+		$data = array('uID'=>$_POST['uID'], 'commentText'=>$_POST['commentText'], 'date'=>$_POST['date'],'postID'=>$_POST['pID']);
 		$result = $this->commentsObject->addComment($data);
 		$this->set('message', $result);
 	}
