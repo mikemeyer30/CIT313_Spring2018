@@ -9,10 +9,8 @@ class Comments extends Model{
 
       $results = $this->db->execute($sql, $pID);
 
-      while ($row=$results->fetchrow()) {
-          $comments[] = $row;
-      }
-
+      $comments = $result;
+      
       return $comments;
 
 

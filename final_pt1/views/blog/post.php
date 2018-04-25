@@ -46,7 +46,8 @@ if( is_array($post) ) {
     <?php if ($u->isRegistered()) { ?>
       <form class="" action="<?php echo BASE_URL?>blog/<?php echo $task ?>" method="post" onsubmit="editor.post()">
         <input type="hidden" id="uID" name="uID" value="<?php echo $_SESSION['uID'];?>">
-        <input id="commentText" class="" name="commentText" type="text">
+        <textarea name="commentText" id="commentText" class="form-control" placeholder="Enter Comment" rows="3" cols="9" ></textarea><br>
+        <!-- <input id="commentText" class="" name="commentText" type="text"> -->
         <input name="date" id="date" size="16" type="hidden" value="<?php echo $date;?>">
         <input type="hidden" id="pID" name="pID" value="<?php echo $pID;?>">
         <button id="submit" type="submit" class="btn btn-primary">Submit</button>
