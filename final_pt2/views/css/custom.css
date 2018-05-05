@@ -1,0 +1,15 @@
+.commentBox {
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.wrapper {
+        display: inline-block;
+}
+
+#sidebar {
+        min-width: 250px;
+        max-width: 250px;
+        height: 100vh;
+}
